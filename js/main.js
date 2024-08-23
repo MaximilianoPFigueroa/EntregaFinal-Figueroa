@@ -1,77 +1,58 @@
-//Ingreso de tipos de camisetas
-//Boton Sesion
+let mostrarCarrito = document.getElementById("carritoCompra") //Variable para mostrar el carrito al clickear al carrito
+let ventanaDelCarrito = document.getElementById("ventanaContenedora") //Variable para seleccionar el div de la ventana modal
+let carritoCompra = JSON.parse(localStorage.getItem("carritoCompra")) || [];
 
+let informacionProductos = async () => { 
+    let info = await fetch("informacion.json");
+    let cargaDeInfo = await info.json();
 
-let buttonSesion = document.createElement('button');
-buttonSesion.type='button';
-buttonSesion.innerHTML='Inicio de Sesión';
-document.body.appendChild(buttonSesion)
-
-//Boton de Registro
-let buttonRegistro = document.createElement('button');
-buttonRegistro.type='button';
-buttonRegistro.innerHTML='Registro';
-document.body.appendChild(buttonRegistro)
-
-//H1
-
-
-
-buttonSesion.addEventListener('click',() => {
-
-    location.href = './pages/sesion.html'
-})
-document.addEventListener('click', () => {
-    const formulario = document.getElementById('miFormulario');
-    const mensaje = document.getElementById('mensaje');
-
-    formulario.addEventListener('submit', (event) => {
-        event.preventDefault(); // Esto para que evitar la accion que hace submit por defecto
-
-        const nombre = document.getElementById('nombre').value;
-        const email = document.getElementById('email').value;
-        if (nombre === '' || email === '') {
-            mensaje.textContent = 'Por favor, rellena todos los campos.';
+const galeria = document.getElementById('galeria');
+cargaDeInfo.forEach((producto) => {
+    let productoDiv = document.createElement('div');
+    productoDiv.classList.add('producto');
+    productoDiv.innerHTML = `
+    <div class="card-deck">
+        <div class="card">
+            <img class="imagen-card" src="${producto.imagen}" alt="${producto.nombre}">
+            <div class="card-body">
+                <h2 class="card-title">${producto.nombre}</h2>
+                <h4> ${producto.descripcion} </h4>
+                <p class="card-text">Este producto, hecho con materiales 100% reciclados, representa solo una de nuestras soluciones para acabar con los residuos plásticos.</p>
+                <h3> Precio: $${producto.precio} </h3>
+            </div>
+        </div>
+    </div>`;
+    galeria.append(productoDiv);
+    let compra = document.createElement("button")
+    compra.className = "compra"
+    compra.innerHTML = 'COMPRA';
+    productoDiv.append(compra);
+    compra.addEventListener('click', () => {
+        let productoRepetido = carritoCompra.some((repetido) => repetido.id === producto.id)
+        if (productoRepetido) {
+            carritoCompra.map((e) => {
+                if (e.id === producto.id) {
+                    console.log(carritoCompra);
+                }
+            });
         } else {
-            mensaje.textContent = `Agradecemos tu logeo, te esperamos en la próxima visita, ${nombre}!`;
+            carritoCompra.push({
+                id: producto.id,
+                nombre: producto.nombre,
+                precio: producto.precio,
+                imagen: producto.imagen,
+                cantidad: producto.cantidad,
+                talle: producto.talle,
+            });
+            console.log(carritoCompra);
+            memoria();
         }
     });
 });
-const productos = [
-    {
-        id: 1,
-        nombre: ' Barcelona',
-        precio: 94.99,
-        descripcion: 'Camiseta Titular 24/25!',
-        imagen: 'https://acdn.mitiendanube.com/stores/002/292/348/products/c2cadbdb1-ffd56ed1b8d6729bfa16868555846885-480-0.jpg'
-    },
-    {
-        id: 2,
-        nombre: 'Real Madrid',
-        precio: 94.99,
-        descripcion: 'Camiseta Titular 24/25!',
-        imagen: 'https://acdn.mitiendanube.com/stores/004/615/161/products/3179c1e6-f624616f187c28128e17171953608769-1024-1024.jpg'
-    },
-    {
-        id: 3,
-        nombre: 'Manchester City',
-        precio: 94.99,
-        descripcion: 'Camiseta Titular 24/25!',
-        imagen: 'https://acdn.mitiendanube.com/stores/002/292/348/products/185bd5ff-5d32-4a7e-8026-0c6125f770801-183782ae82ccd6835b16845540125047-640-0.jpeg'
-    }
-];
-const galeria = document.getElementById('galeria');
-        productos.forEach((producto) => {
-            const productoDiv = document.createElement('div');
-            productoDiv.classList.add('producto');
-            productoDiv.innerHTML = `
-                
-                <h2>${producto.nombre}</h2>
-                <p>${producto.descripcion}</p>
-                <p>Precio: $${producto.precio}</p>
-                <img src="${producto.imagen}" alt="${producto.nombre}">
-                <button> Comprar </button>
-                <button> Ver Producto </button>
-            `;
-            galeria.appendChild(productoDiv);
-        });
+    console.log(cargaDeInfo);
+}
+informacionProductos();
+
+let memoria = () => {
+    localStorage.setItem("carritoCompra", JSON.stringify(carritoCompra));
+};

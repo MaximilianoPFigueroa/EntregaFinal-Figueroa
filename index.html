@@ -1,28 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/estilos.css">
     <title>Bienvenido al sitio Web</title>
 </head>
+
 <body>
-    <h1>Bienvenido a KAZAK</h1>
-
-    <p>
-        Bienvenido al mejor sitio Web en ventas de camisetas de futbol. Disponemos de los mejores modelos de clubes y países de Europa y América.
-    </p>
-    <h2>Aquí disponemos de algunos modelitos </h2>
-
-    <div id="galeria">
-
-    </div>
+    <div class="encabezado">
+        <h1 id="titulo"></h1>
+        <a href="./index.html"><img  class="tamanio-titulo" src="./imagen/logo-kazak.web" alt=""></a>
         
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis quam delectus fuga saepe pariatur sunt natus nihil ratione provident illum rerum sequi eligendi, optio ipsum magni incidunt excepturi tenetur commodi.</p>
+        <div id="contCarrito">
+            <img id="carritoCompra" class="carrito" src="./imagen/carrito-compra.web" alt="">
+        </div>
+    </div>
+    <div id="contenedor">
+    </div>
+    <main class="estructura">
+        <div id="galeria">
 
-    <h2>Para ver mas modelos y obtener hasta un 50% de descuento en la segunda unidad, ingrese su cuenta o lo invitamos a crearse una.</h2>
+        </div>
+        <div class="botonesGaleria">
 
+        </div>
+    </main>
+    <h2>
+        HAGAMOS HISTORIA CON LA MODA DE ROPA DEPORTIVA CON KAZAK
+    </h2>
+
+        <!--Ventana de carrito-->
+    <div id="ventanaContenedora" class="ventanaContenedora">
+
+    </div>    
     <script src="js/images.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
     <script src="js/footer.js"></script>
     <script src="js/main.js"></script>
+    <script src="./js/carrito.js"></script>
 </body>
+
 </html>

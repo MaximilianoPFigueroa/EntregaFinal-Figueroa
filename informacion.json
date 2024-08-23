@@ -1,0 +1,100 @@
+
+[{
+    "id": 1,
+    "nombre":"Barcelona",
+    "precio": 94.99,
+    "descripcion": "Camiseta Titular 24/25!",
+    "imagen": "../imagen/clubes/europa/barcelona-titular.jpg",
+    "cantidad": 1
+},
+{
+    "id": 2,
+    "nombre": "Real Madrid",
+    "precio": 94.99,
+    "descripcion": "Camiseta Titular 24/25!",
+    "imagen": "../imagen/clubes/europa/realmadrid-titular.jpg",
+    "cantidad": 1
+},
+{
+    "id": 3,
+    "nombre":"Manchester City",
+    "precio": 94.99,
+    "descripcion": "Camiseta Titular 24/25!",
+    "imagen": "../imagen/clubes/europa/city-titular.jpg",
+    "cantidad": 1
+},
+{
+    "id": 4,
+    "nombre": "Arsenal",
+    "precio": 94.99,
+    "descripcion": "Camiseta Titular 24/25!",
+    "imagen": "../imagen/clubes/europa/arsenal-titular.jpg",
+    "cantidad": 1
+},
+{
+    "id": 5,
+    "nombre": "Atlético de Madrid",
+    "precio": 94.99,
+    "descripcion": "Camiseta Titular 24/25!",
+    "imagen": "../imagen/clubes/europa/atletico-suplente.jpg",
+    "cantidad": 1
+},
+{
+    "id": 6,
+    "nombre": "Manchester United",
+    "precio": 94.99,
+    "descripcion": "Camiseta Titular 24/25!",
+    "imagen": "../imagen/clubes/europa/united-suplente.jpg",
+    "cantidad": 1
+},
+{
+    "id": 7,
+    "nombre": "Alemania",
+    "precio": 124.99,
+    "descripcion": "Camiseta Titular 24/25!",
+    "imagen": "../imagen/paises/europa/alemania-titular.jpg",
+    "cantidad": 1
+},
+{
+    "id": 8,
+    "nombre": "España",
+    "precio": 124.99,
+    "descripcion": "Camiseta Titular 24/25!",
+    "imagen": "../imagen/paises/europa/espania-titular.jpg",
+    "cantidad": 1
+},
+{
+    "id": 8,
+    "nombre": "Inglaterra",
+    "precio": 124.99,
+    "descripcion": "Camiseta Titular 24/25!",
+    "imagen": "../imagen/paises/europa/inglaterra-titular.jpg",
+    "cantidad": 1
+},
+{
+    "id": 9,
+    "nombre": "Francia",
+    "precio": 124.99,
+    "descripcion": "Camiseta Titular 24/25!",
+    "imagen": "../imagen/paises/europa/francia-titular.jpg",
+    "cantidad": 1
+}
+,
+{
+    "id": 9,
+    "nombre": "Argentina",
+    "precio": 124.99,
+    "descripcion": "Camiseta Titular 24/25!",
+    "imagen": "../imagen/paises/america/argentina-titular.jpg",
+    "cantidad": 1
+}
+,
+{
+    "id": 9,
+    "nombre": "Colombia",
+    "precio": 124.99,
+    "descripcion": "Camiseta Titular 24/25!",
+    "imagen": "../imagen/paises/america/colombia-suplente.jpg",
+    "cantidad": 1
+}
+]
